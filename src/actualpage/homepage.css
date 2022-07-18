@@ -1,0 +1,44 @@
+#addproduct input{
+    width: 80%;
+    height: 50px;
+    padding: 10px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    
+}
+/* style={{color:'white',position:'absolute',right:60}} */
+#signout{
+    border: none;
+    background-color: black;
+    color: white;
+    position:'relative' ; 
+    left: 350px;
+}
+/* }border: none; */
+#email{
+    color: white;
+    position: relative;
+    left: 300px;
+}
+
+#addproduct{
+    justify-content: center;
+    align-items: center; 
+    display:'none';
+    width: 500;
+    height: 500;
+    background-color: white;
+    color:'black';
+    
+ 
+    width:'100%';
+    height:100%
+}
+#addproduct button{
+    background-color: red;
+    border-radius: 10px;
+    width: 30%;
+    height: 40px;
+    font-size: large;
+    margin-left: 20px;
+}

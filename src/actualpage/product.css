@@ -1,0 +1,30 @@
+div p{
+    margin:0;
+    width: auto;
+    
+}
+#product{
+    box-sizing: border-box;
+    padding: 4px;
+    background-color: rgb(249,248,249);
+    width: 150px;
+    margin:4px;
+
+    /* height: 100px; */
+   
+}
+#product img{
+    width: 150px;
+    height: 150px;
+
+}
+#product button{
+    text-align: center;
+    background-color:blue;
+    width: 100px;
+    padding: 4px;
+    border: none;
+    color: white;
+    font-size:medium;
+        
+}
