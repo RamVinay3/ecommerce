@@ -1,0 +1,49 @@
+.name{
+    width: 245px;
+    /* margin:5px 37px 10px 10px; */
+    /* margin-right: 10px; */
+    
+
+
+
+    
+    }
+   .nameholder .name{ 
+        margin-right: 10px;
+
+    } 
+    .large{
+        width: 500px;
+        margin-bottom: 10px;
+        /* margin-left: 10px; */
+        height: 100%;
+    
+    }
+    .whole{
+        display:flex;
+        justify-content: center;
+        vertical-align: 'center';
+        margin: 50px auto;
+    
+    }
+    
+    .butt{
+        border: none;
+        border: 2px solid black;
+        background-color: blue;
+        color:white;
+        font-weight: 400;
+        width: 150px;
+        /* margin-left: 10px; */
+    
+    
+    
+    }
+    h1{
+        margin-left: 10px;
+    }
+    .name,.large,.butt{
+        /* border: none; */
+        height: 50px;
+       
+    }
