@@ -4,7 +4,7 @@ import {db} from '../firebase'
 import './product.css'
 // import FavoriteIcon from '@mui/icons-material';
 
-const Product=(props)=> {
+const Product=(props)=> { 
    console.log("props of display is",props.display)
   const [sports,setsports]=useState([])
   const [drynuts,setdrynuts]=useState([])
@@ -42,7 +42,7 @@ const Product=(props)=> {
                           return(
                             <div>
                                                   
-                            <div id="product">
+                            <div id="product" style={{marginLeft:'10px'}}>
                                   <img src={l.url}></img>
                                   
                                   <p>{l.productname}</p>

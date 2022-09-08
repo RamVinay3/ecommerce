@@ -48,43 +48,43 @@ import{db} from '../firebase'
   
   
  
-  const increment=async (index,id)=>{
-    //it will increment count of total objects
-    var x=count;
-    x[index]+=1;
-    setcount(x)
-    const path="users/"+user.email+"personal"+"/cart"
-    const docref = doc(db, path, id);
+  // const increment=async (index,id)=>{
+  //   //it will increment count of total objects
+  //   var x=count;
+  //   x[index]+=1;
+  //   setcount(x)
+  //   const path="users/"+user.email+"personal"+"/cart"
+  //   const docref = doc(db, path, id);
     
-      console.log(path);
-      await updateDoc(docref, {
-        count: x[index]
-      });
+  //     console.log(path);
+  //     await updateDoc(docref, {
+  //       count: x[index]
+  //     });
 
-  }
-  const decrement=async(index,id)=>{
-    //it will decrement count of products in a cart
-    const path="users/"+user.email+"personal"
-    var x=count;
-    var y=cart;
+  // }
+  // const decrement=async(index,id)=>{
+  //   //it will decrement count of products in a cart
+  //   const path="users/"+user.email+"personal"
+  //   var x=count;
+  //   var y=cart;
     
    
-    setcount(x)
+  //   setcount(x)
     
-  }
-  const addcart=async(id)=>{
-    //adding items to the cart
-    console.log("hello",id,user)
-    //this.is.how you add doc in nested loop of firestore
-    const path="users/"+user.email+"personal"+"/cart"
+  // }
+  // const addcart=async(id)=>{
+  //   //adding items to the cart
+  //   console.log("hello",id,user)
+  //   //this.is.how you add doc in nested loop of firestore
+  //   const path="users/"+user.email+"personal"+"/cart"
     
-    var a=[];
-    var k=[];
+  //   var a=[];
+  //   var k=[];
  
-    setcart(a)
-    setcount(k)
-    // console.log(docref)
-  }
+  //   setcart(a)
+  //   setcount(k)
+  //   // console.log(docref)
+  // }
  
   useEffect(()=>{
     (async()=>{
@@ -92,14 +92,14 @@ import{db} from '../firebase'
       var docsnap1=await getDoc(ref1)
       setdisplay(docsnap1.data())
 
-         onAuthStateChanged(auth, (user) => {
+         await onAuthStateChanged(auth, (user) => {
 
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         // const uid = user.uid;
-        
-         setuser(user)
+        console.log("user logged in")
+        setuser(user)
 
       } else {
         // User is signed out
@@ -114,9 +114,10 @@ import{db} from '../firebase'
       
    
       const access=docSnap.data()
-      if(user){
+      console.log(access)
         setshop(access.hadshop)
-      }
+        // console.log(shop)
+      
       console.log(docSnap.data())
 
     // var a=[];
@@ -154,14 +155,12 @@ import{db} from '../firebase'
          <Nav hadshop={hadshop} path={user.email+"personal"} ></Nav>
          </div>
          <div style={{width:'50%'}}>
-          {
-            user&&<div>hello user</div>
-          }
+         
          {user&&(<Product   display={display}></Product>)}
             </div>
-         <div style={{width:'20%'}}>
+         {/* <div style={{width:'20%'}}>
             <Cart cart={cart} increment={increment}  decrement={decrement} count={count} ></Cart>
-            </div>
+            </div> */}
            </div>
           </div>
          
