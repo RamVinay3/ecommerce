@@ -92,33 +92,38 @@ import{db} from '../firebase'
       var docsnap1=await getDoc(ref1)
       setdisplay(docsnap1.data())
 
-         await onAuthStateChanged(auth, (user) => {
+       const promise= new Promise((res,rej)=>{
+         onAuthStateChanged(auth, (user) => {
 
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        // const uid = user.uid;
-        console.log("user logged in")
-        setuser(user)
-
-      } else {
-        // User is signed out
-        // ...
-      }
-    });
-  
+          if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            // const uid = user.uid;
+            console.log("user logged in",user)
+            setuser(user)
+              res(user)
+          } else {
+            // User is signed out
+            // ...
+            rej();
+          }
+        });
+      
+        })
+   promise.then(async(user)=>{
     const path=user.email+"personal"
-     console.log(path)
-     const docRef = doc(db, "users", path);
-      const docSnap = await getDoc(docRef);
-      
-   
-      const access=docSnap.data()
-      console.log(access)
-        setshop(access.hadshop)
-        // console.log(shop)
-      
-      console.log(docSnap.data())
+    console.log(path)
+    const docRef = doc(db, "users", path);
+     const docSnap = await getDoc(docRef);
+     
+  
+     const access=docSnap.data()
+     console.log(access,"hello access")
+       setshop(access.hadshop)
+       // console.log(shop)
+     
+     console.log(docSnap.data())
+   })
 
     // var a=[];
     // const querySnapshot=await getDocs(collection(db,path))
