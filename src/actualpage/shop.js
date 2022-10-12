@@ -24,7 +24,7 @@ const Shop =(props)=> {
         setmodal(false)
       };
         
-   const    handleOpen = () => {
+   const  handleOpen = () => {
        setopen(true)
       };
   const Create=async()=>{
@@ -47,11 +47,10 @@ await updateDoc(Ref, {hadshop: true,shopname:shopname,orders:[]});
         <Modal
         onClose={handleClose}
         open={open}
-
+        path={location.state.path}
         
         >
-          {/* <h1>hllo</h1> */}
-         
+          
         <div style={{backgroundColor:'white',position:'absolute',top:'40%',left:'35%' ,width:500,padding:'10px'}}>
         <TextField id="standard-basic" label="enter shop name" value={shopname}  style={{marginBottom:'10px'}} onChange={namechange}/>
    
@@ -78,7 +77,7 @@ await updateDoc(Ref, {hadshop: true,shopname:shopname,orders:[]});
  
    { hadshop&&(<button onClick={openit}  style={{height:'120px',width:'120px'}}><PlusSquareOutlined  />Add Product</button>)}
 
-      <Add open={modal} handleClose={handleClose}></Add>
+      <Add open={modal} handleClose={handleClose}  path={location.state.path} ></Add>
 
     
     </div>

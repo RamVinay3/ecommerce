@@ -12,14 +12,17 @@ function Add(props) {
   const [url,seturl]=useState('')
   const [percent, setPercent] = useState(0);
   const addproduct=async()=>{
+   
+   
+    console.log(props)
     const ref=doc(db,'users',props.path)
     const docSnap = await getDoc(ref);
     const ref1=doc(db,'products','products')
     const docsnap1=await getDoc(ref1)
     const access1=docsnap1.data()
     const access=docSnap.data()
-
-    var a=access.myshop
+    console.log("hello access",access)
+    var a=access.myshop;
     var b;
     var select = document.getElementById('type');
 var value = select.options[select.selectedIndex].value;
