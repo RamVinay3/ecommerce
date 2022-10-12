@@ -5,7 +5,7 @@ import './product.css'
 // import FavoriteIcon from '@mui/icons-material';
 
 const Product=(props)=> { 
-   console.log("props of display is",props.display)
+  console.log("props of display is",props.display)
   const [sports,setsports]=useState([])
   const [drynuts,setdrynuts]=useState([])
   const [fruits,setfruits]=useState([])
@@ -33,10 +33,10 @@ const Product=(props)=> {
           Object.keys(props.display).map((key,index)=>{
             if(props.display[key].length>0){
               return(
-                   <div>
+                   <div >
 
                     <h1>{key}</h1>
-                    <div>
+                    <div style={{display:'flex'}}>
                       {
                         props.display[key].map((l,index1)=>{
                           return(

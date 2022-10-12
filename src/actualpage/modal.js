@@ -37,7 +37,8 @@ var value = select.options[select.selectedIndex].value;
       url:url,
       delivarable:'yes',
       shopname:access.shopname,
-      type:value
+      type:value,
+      sold:0
     }
    a.push(shop)
    props.handleClose()
